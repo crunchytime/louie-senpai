@@ -9,21 +9,20 @@ import Free from './components/free/Free';
 import './styles/App.scss';
 
 function App() {
-  return (
-    <div className="app-container">
-     <h1 className="big-bold-text">Louie Senpai</h1>
-     <Intro/>
+	return (
+		<div className="app-container">
+			<h1 className="big-bold-text">Louie Senpai</h1>
+			<Intro />
 
-     <Aca/>
+			<Aca />
 
-     <Extra/>
+			<Extra />
 
-     <Free/>
+			<Free />
 
-     <Report/>
-     
-    </div>
-  );
+			<Report />
+		</div>
+	);
 }
 
 export default App;
