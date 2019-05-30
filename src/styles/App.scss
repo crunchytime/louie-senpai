@@ -1,25 +1,57 @@
-// $pale-blue :#a1c3d1;
-// $mauve : #b39bc8;
-// $off-white: #f0ebf4;
-// $soft-pink: #f172a1;
-// $hot-pink: #e64398;
+$pale-blue: #a1c3d1;
+$mauve: #b39bc8;
+$off-white: #f0ebf4;
+$soft-pink: #f172a1;
+$hot-pink: #e64398;
 
-// body {
-//  font-family: 'Open Sans', sans-serif;
-//  color:$off-white;
-//  background: $soft-pink;
-// }
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	background: $mauve;
+}
 
-// .app-container {
-//   margin: 80px 100px;
-// }
+.app-container {
+	margin: 80px 100px;
+}
+.section-container {
+	margin: 10px;
+	padding: 40px;
+	background: white;
+	border-radius: 2px;
+}
 
-// .big-bold-text {
-//   font-family: 'Roboto Slab', serif;
-//   font-size: 100px;
-// }
+.subsection-container {
+	padding: 0px 0px 40px 0px;
+}
 
-// .title {
-//   font-family: 'Roboto Slab', serif;
-//   letter-spacing: 1px;
-// }
+.big-bold-text {
+	font-family: 'Raleway', sans-serif;
+	color: $off-white;
+	font-weight: 800;
+	letter-spacing: 10px;
+	text-transform: lowercase;
+	font-size: 100px;
+}
+
+.title {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+.label {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+// ant rate star
+.quality-icon {
+}
+
+.ant-checkbox-group-item {
+	font-size: 18px;
+	line-height: 36px;
+	display: block;
+}

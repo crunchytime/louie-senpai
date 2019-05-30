@@ -1,7 +1,11 @@
 // DEFINES ALL THE CONSTANT ACTION TYPES TO BE DISPATCHED TO THE STORE
 
 const ACTION_TYPE = {
-	name: 'UPDATE_NAME'
+	name: 'UPDATE_NAME',
+	gender: 'UPDATE_GENDER',
+	rate: 'UPDATE_RATE',
+	quality: 'UPDATE_QUALITY',
+	characteristics: 'UPDATE_CHARACTERISTICS'
 };
 
 export default ACTION_TYPE;

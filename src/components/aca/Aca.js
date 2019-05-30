@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Aca extends Component {
-    render() {
-        return (
-            <div>
-                <h1 className="title">Academic Paragraph</h1>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div className="section-container">
+				<h1 className="title">2.Academic</h1>
+			</div>
+		);
+	}
 }
