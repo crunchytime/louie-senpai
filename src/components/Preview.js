@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Affix, Card } from 'antd';
+import { Affix, Card, Button } from 'antd';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import QUALITY from 'utils/quality';
 
 class Preview extends Component {
+	state = {
+		copied: false,
+		previewText: ''
+	};
+
+	handleClickButton = (event) => {
+		console.log(this.previewTextRef);
+		console.log(this.previewTextRef.innerHtml);
+	};
+
+	makeText = () => {
+		const { topics } = this.props;
+		return `${this.printName()} is ${this.printCharacteristics()} student who ${this.printQuality()}. ${Object.keys(
+			topics
+		)
+			.map((key) => `${this.capitalise(this.printSimpleGender())} ${topics[key]} ${key}. `)
+			.join(
+				''
+			)} ${this.printName()} could improve with ${this.printImprovements()}.${this.printFreeFormFeedback()}`;
+	};
+
 	printName = () => {
 		const { name } = this.props;
 		if (name) {
@@ -107,7 +129,6 @@ class Preview extends Component {
 
 	printFreeFormFeedback = () => {
 		const { freeFormFeedback } = this.props;
-		console.log('ere tey are: ', freeFormFeedback);
 		return freeFormFeedback;
 	};
 	render() {
@@ -115,15 +136,19 @@ class Preview extends Component {
 		return (
 			<Affix offsetTop={300}>
 				<h1 className="title">Report Preview</h1>
-				<Card className="preview">
-					{this.printName()} is {this.printCharacteristics()} student who {this.printQuality()}.<br />
-					{Object.keys(topics).map(
-						(key) => `${this.capitalise(this.printSimpleGender())} ${topics[key]} ${key}. `
-					)}
-					<br />
-					{this.printName()} could improve with {this.printImprovements()}. <br />
-					{this.printFreeFormFeedback()}
+				<Card
+					className="preview"
+					ref={(element) => {
+						this.previewTextRef = element;
+					}}
+				>
+					{this.makeText()}
 				</Card>
+				<CopyToClipboard text={this.makeText()} onCopy={() => this.setState({ copied: true })}>
+					<Button type="primary" onClick={this.handleClickButton} size="large">
+						Copy to clipboard
+					</Button>
+				</CopyToClipboard>
 			</Affix>
 		);
 	}
