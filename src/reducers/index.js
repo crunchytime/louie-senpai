@@ -7,7 +7,9 @@ import {
 	genderReducer,
 	qualityReducer,
 	characteristicReducer,
-	topicReducer
+	topicReducer,
+	improvementReducer,
+	freeReducer
 } from 'reducers/louieSenpaiReducers';
 
 const composeEnhancers =
@@ -22,7 +24,9 @@ export const store = createStore(
 		genderReducer,
 		qualityReducer,
 		characteristicReducer,
-		topicReducer
+		topicReducer,
+		improvementReducer,
+		freeReducer
 	}),
 	composeEnhancers(applyMiddleware(thunkMiddleware))
 );

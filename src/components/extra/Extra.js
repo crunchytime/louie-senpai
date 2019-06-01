@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-
-export default class Extra extends Component {
+import Improvement from 'components/extra/Improvement';
+import asFormCard from 'components/hoc/FormCard';
+class Extra extends Component {
 	render() {
 		return (
-			<div className="section-container">
-				<h1 className="title">3.Extra</h1>
+			<div>
+				<Improvement />
 			</div>
 		);
 	}
 }
+
+export default asFormCard(Extra, 'Extra Information');

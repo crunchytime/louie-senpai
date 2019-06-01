@@ -35,25 +35,28 @@ class Preview extends Component {
 		} else {
 			beginning = 'a';
 		}
+		return `${beginning} ${this.printList(characteristics)}`;
+	};
 
-		if (characteristics.length === 1) {
-			return `${beginning} ${characteristics}`;
+	printList = (list) => {
+		if (!list || list.length === 0) return '';
+		if (list.length === 1) {
+			return list;
 		} else {
-			if (characteristics.length === 2) {
-				const charaList = characteristics.join(' and ');
-				return `${beginning} ${charaList}`;
+			if (list.length === 2) {
+				const twoElements = list.join(' and ');
+				return twoElements;
 			} else {
 				// more than 2
-				const charaList = characteristics.slice(0, characteristics.length - 1).join(', ');
-				const lastChara = characteristics.pop();
-				return `${beginning} ${charaList} and ${lastChara}`;
+				const mainList = list.slice(0, list.length - 1).join(', ');
+				const lastElement = list.pop();
+				return `${mainList} and ${lastElement}`;
 			}
 		}
 	};
 
 	printQuality = () => {
 		const { quality } = this.props;
-
 		const genericQuality = QUALITY[quality];
 		return this.formatGender(genericQuality);
 	};
@@ -81,7 +84,7 @@ class Preview extends Component {
 		return newString;
 	};
 
-	printGender = () => {
+	printSimpleGender = () => {
 		const { gender } = this.props;
 		if (gender === 'boy') {
 			return 'he';
@@ -96,17 +99,30 @@ class Preview extends Component {
 		return someString[0].toUpperCase() + someString.slice(1, someString.length).toLowerCase();
 	};
 
+	printImprovements = () => {
+		const { improvement } = this.props;
+		if (!improvement || improvement.length === 0) return '(Insert areas of improvement)';
+		return this.printList(improvement);
+	};
+
+	printFreeFormFeedback = () => {
+		const { freeFormFeedback } = this.props;
+		console.log('ere tey are: ', freeFormFeedback);
+		return freeFormFeedback;
+	};
 	render() {
-		const { name, gender } = this.props;
+		const { topics } = this.props;
 		return (
 			<Affix offsetTop={300}>
 				<h1 className="title">Report Preview</h1>
 				<Card className="preview">
 					{this.printName()} is {this.printCharacteristics()} student who {this.printQuality()}.<br />
-					{this.capitalise(this.printGender())} (options: Ranked 1-5 feedback on topic 1) (Dropbox for topic
-					1) and (options :ranked 1-5 feedback on topic 2) (drop box for topic two). 3. {name} could improve
-					with (tick box options: respect) (tickbox option: classwork) (tickbox option homework). 4. {gender}[inset
-					text: concluding statement]
+					{Object.keys(topics).map(
+						(key) => `${this.capitalise(this.printSimpleGender())} ${topics[key]} ${key}. `
+					)}
+					<br />
+					{this.printName()} could improve with {this.printImprovements()}. <br />
+					{this.printFreeFormFeedback()}
 				</Card>
 			</Affix>
 		);
@@ -119,13 +135,17 @@ const mapStateToProps = (store) => {
 	const { gender } = store.genderReducer;
 	const { quality } = store.qualityReducer;
 	const { topics } = store.topicReducer;
+	const { improvement } = store.improvementReducer;
+	const { freeFormFeedback } = store.freeReducer;
 	return {
 		name: name,
 		gender: gender,
 		characteristics: characteristics,
 		quality,
 		quality,
-		topics: topics
+		topics: topics,
+		improvement: improvement,
+		freeFormFeedback: freeFormFeedback
 	};
 };
 export default connect(mapStateToProps)(Preview);

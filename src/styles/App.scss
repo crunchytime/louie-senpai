@@ -1,8 +1,8 @@
-$pale-blue: #a1c3d1;
-$mauve: #b39bc8;
-$off-white: #f0ebf4;
-$soft-pink: #f172a1;
-$hot-pink: #e64398;
+// $pale-blue: #a1c3d1;
+// $mauve: #b39bc8;
+// $off-white: #f0ebf4;
+// $soft-pink: #f172a1;
+// $hot-pink: #e64398;
 
 $std-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
@@ -13,7 +13,6 @@ body {
 
 .top-hero {
 	box-shadow: $std-box-shadow;
-	background: $off-white;
 	padding-top: 40px;
 }
 
@@ -31,7 +30,6 @@ body {
 	margin: 0px 0px 20px 0px;
 	padding: 20px;
 	background: white;
-	border: 1px solid $off-white;
 	border-radius: 4px;
 }
 
@@ -62,8 +60,12 @@ body {
 	letter-spacing: 1px;
 }
 
+.name-input {
+	font-size: 16px;
+}
+
 .ant-checkbox-group-item {
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 36px;
 	min-width: 200px;
 }
@@ -74,7 +76,9 @@ body {
 }
 
 .preview {
-	font-family: 'Raleway', sans-serif;
-	font-size: 18px;
-	font-weight: 600;
+	font-size: 16px;
+}
+
+.free-form-feedback-input {
+	font-size: 16px;
 }

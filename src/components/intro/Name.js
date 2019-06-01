@@ -16,7 +16,7 @@ class Name extends Component {
 	};
 	render() {
 		return (
-			<Input onChange={this.onChange} />
+			<Input className="name-input" onChange={this.onChange} />
 			// <Select
 			// 	size="large"
 			// 	style={{ width: 200 }}

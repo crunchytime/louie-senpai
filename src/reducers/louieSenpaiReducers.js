@@ -53,3 +53,21 @@ export const topicReducer = (state = { topics: {} }, action) => {
 			return state;
 	}
 };
+
+export const improvementReducer = (state = { improvement: [] }, action) => {
+	switch (action.type) {
+		case ACTION_TYPE.improve:
+			return Object.assign({}, state, action.data);
+		default:
+			return state;
+	}
+};
+
+export const freeReducer = (state = { freeFormFeedback: '' }, action) => {
+	switch (action.type) {
+		case ACTION_TYPE.free:
+			return Object.assign({}, state, action.data);
+		default:
+			return state;
+	}
+};

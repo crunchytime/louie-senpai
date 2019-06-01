@@ -6,7 +6,9 @@ const ACTION_TYPE = {
 	rate: 'UPDATE_RATE',
 	quality: 'UPDATE_QUALITY',
 	characteristics: 'UPDATE_CHARACTERISTICS',
-	topic: 'UPDATE_TOPIC'
+	topic: 'UPDATE_TOPIC',
+	improve: 'UPDATE_IMPROVEMENT',
+	free: 'UPDATE_FREE_FORM_FEEDBACK'
 };
 
 export default ACTION_TYPE;

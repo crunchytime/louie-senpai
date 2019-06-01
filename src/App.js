@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
-import Report from './components/Report';
 import Intro from './components/intro/Intro';
 import Aca from './components/aca/Aca';
 import Extra from './components/extra/Extra';
@@ -32,12 +31,6 @@ function App() {
 					</Col>
 					<Col sm={24} md={24} lg={12}>
 						<Preview />
-					</Col>
-				</Row>
-
-				<Row>
-					<Col span={24}>
-						<Report />
 					</Col>
 				</Row>
 			</div>
