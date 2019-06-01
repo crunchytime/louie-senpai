@@ -17,6 +17,7 @@ function App() {
 				<Col span={24}>
 					<div className="center-content-container">
 						<h1 className="big-bold-text">Louie Senpai</h1>
+						<br />
 					</div>
 				</Col>
 			</Row>
@@ -35,6 +36,7 @@ function App() {
 							className="hero-image"
 							src="https://media2.giphy.com/media/3o7TKM5fnYxPD8sGhW/source.gif"
 						/>
+						<p>this gif is copyright "jjjjjohn Sticker" please dont sue me</p>
 					</Col>
 				</Row>
 			</div>

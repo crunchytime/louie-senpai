@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Affix, Card, Button } from 'antd';
+import { Affix, Card, Button, message } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import QUALITY from 'utils/quality';
+
+const success = () => {
+	message.success(<span style={{ fontSize: 18 }}>Successfully copied to clipboard!</span>);
+};
 
 class Preview extends Component {
 	state = {
@@ -137,7 +141,7 @@ class Preview extends Component {
 			<Affix offsetTop={0} style={{ marginBottom: 800 }}>
 				<h1 className="title">Report Preview</h1>
 				<Card className="preview">{this.makeText()}</Card>
-				<CopyToClipboard text={this.makeText()} onCopy={() => this.setState({ copied: true })}>
+				<CopyToClipboard text={this.makeText()} onCopy={success}>
 					<Button type="primary" onClick={this.handleClickButton} size="large">
 						Copy to clipboard
 					</Button>
