@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Affix, Card } from 'antd';
+import QUALITY from 'utils/quality';
 
 class Preview extends Component {
 	printName = () => {
@@ -53,6 +54,27 @@ class Preview extends Component {
 
 	printQuality = () => {
 		const { quality } = this.props;
+		const genericQuality = QUALITY[quality];
+		this.formatGender(genericQuality);
+		return genericQuality;
+	};
+
+	formatGender = (source) => {
+		if (!source) return source;
+		const regex = /\|\w+\,\w+\|/gi;
+		let matches;
+		do {
+			matches = regex.exec(source);
+			if (matches) {
+				const match = matches[0];
+				console.log('match: ', match);
+			}
+		} while (matches);
+
+		// const matches = regex.exec(source);
+		// if (!matches) return source;
+		// console.log('here are matches: ', matches);
+		return source;
 	};
 
 	render() {
