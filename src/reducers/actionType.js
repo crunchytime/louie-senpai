@@ -5,7 +5,8 @@ const ACTION_TYPE = {
 	gender: 'UPDATE_GENDER',
 	rate: 'UPDATE_RATE',
 	quality: 'UPDATE_QUALITY',
-	characteristics: 'UPDATE_CHARACTERISTICS'
+	characteristics: 'UPDATE_CHARACTERISTICS',
+	topic: 'UPDATE_TOPIC'
 };
 
 export default ACTION_TYPE;

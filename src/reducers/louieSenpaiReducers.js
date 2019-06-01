@@ -44,3 +44,12 @@ export const characteristicReducer = (state = { characteristics: [] }, action) =
 			return state;
 	}
 };
+
+export const topicReducer = (state = { topics: [] }, action) => {
+	switch (action.type) {
+		case ACTION_TYPE.topic:
+			return Object.assign({}, state, action.data);
+		default:
+			return state;
+	}
+};

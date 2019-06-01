@@ -31,5 +31,5 @@ const mapStateToProps = (store) => {
 
 export default asFormField(
 	connect(mapStateToProps)(Character),
-	'What characteristics do you associated with this student?'
+	'What characteristics do you associate with this student?'
 );

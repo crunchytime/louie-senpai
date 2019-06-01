@@ -12,34 +12,31 @@ import './styles/App.scss';
 
 function App() {
 	return (
-		<div className="app-container">
-			<Row>
+		<div>
+			<Row className="top-hero">
 				<Col span={24}>
-					<h1 className="big-bold-text">Louie Senpai</h1>
-				</Col>
-			</Row>
-			<Row>
-				<Col sm={24} md={24} lg={12}>
-					<Intro />
-				</Col>
-				<Col sm={24} md={24} lg={12}>
-					<Aca />
+					<div className="center-content-container">
+						<h1 className="big-bold-text">Louie Senpai</h1>
+					</div>
 				</Col>
 			</Row>
 
-			<Row>
-				<Col sm={24} md={24} lg={12}>
-					<Extra />
-				</Col>
-				<Col sm={24} md={24} lg={12}>
-					<Free />
-				</Col>
-			</Row>
-			<Row>
-				<Col span={24}>
-					<Report />
-				</Col>
-			</Row>
+			<div className="app-container">
+				<Row>
+					<Col sm={24} md={24} lg={24}>
+						<Intro />
+						<Aca />
+						<Extra />
+						<Free />
+					</Col>
+				</Row>
+
+				<Row>
+					<Col span={24}>
+						<Report />
+					</Col>
+				</Row>
+			</div>
 		</div>
 	);
 }

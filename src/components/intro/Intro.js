@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 
 import ACTION_TYPE from 'reducers/actionType';
 import Name from './Name';
-import Rate from 'components/intro/Rate';
-
-import asFormCard from 'components/hoc/FormCard';
 import Gender from './Gender';
 import Quality from './Quality';
 import Character from './Character';
+
+import asFormCard from 'components/hoc/FormCard';
 
 class Intro extends Component {
 	handleChange = (value) => {
