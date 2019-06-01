@@ -21,6 +21,19 @@ body {
 .top-hero {
 	box-shadow: $std-box-shadow;
 	padding-top: 40px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.hero-image {
+	position: fixed;
+	z-index: 100;
+	bottom: 0px;
+	right: 0px;
+	@media #{$small-max} {
+		max-width: 300px;
+	}
 }
 
 .app-container {
@@ -35,6 +48,13 @@ body {
 	@media #{$small-max} {
 		padding: 0px;
 	}
+}
+
+.custom-col-left {
+	// height: 100vh;
+	// background: url(https://media1.tenor.com/images/49474f2e66856192b55c68d9ecc0a680/tenor.gif?itemid=12496779);
+	// background-size: 100%;
+	// background-position: bottom right;
 }
 .section-container {
 	margin: 10px;

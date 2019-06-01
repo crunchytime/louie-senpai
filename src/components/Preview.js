@@ -134,7 +134,7 @@ class Preview extends Component {
 	render() {
 		const { topics } = this.props;
 		return (
-			<Affix offsetTop={0}>
+			<Affix offsetTop={0} style={{ marginBottom: 800 }}>
 				<h1 className="title">Report Preview</h1>
 				<Card className="preview">{this.makeText()}</Card>
 				<CopyToClipboard text={this.makeText()} onCopy={() => this.setState({ copied: true })}>

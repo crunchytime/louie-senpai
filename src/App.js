@@ -29,8 +29,12 @@ function App() {
 						<Extra />
 						<Free />
 					</Col>
-					<Col sm={24} md={24} lg={12} className="custom-col">
+					<Col sm={24} md={24} lg={12} className="custom-col custom-col-left">
 						<Preview />
+						<img
+							className="hero-image"
+							src="https://media2.giphy.com/media/3o7TKM5fnYxPD8sGhW/source.gif"
+						/>
 					</Col>
 				</Row>
 			</div>
