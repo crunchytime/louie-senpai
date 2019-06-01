@@ -45,7 +45,7 @@ export const characteristicReducer = (state = { characteristics: [] }, action) =
 	}
 };
 
-export const topicReducer = (state = { topics: [] }, action) => {
+export const topicReducer = (state = { topics: {} }, action) => {
 	switch (action.type) {
 		case ACTION_TYPE.topic:
 			return Object.assign({}, state, action.data);

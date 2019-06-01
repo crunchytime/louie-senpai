@@ -30,4 +30,4 @@ class Intro extends Component {
 	}
 }
 
-export default asFormCard(connect()(Intro), '1.Introduction');
+export default asFormCard(connect()(Intro), 'Introduction');

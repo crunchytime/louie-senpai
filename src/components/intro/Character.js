@@ -13,14 +13,7 @@ class Character extends Component {
 		});
 	};
 	render() {
-		return (
-			<Checkbox.Group
-				options={CHARACTERISTICS}
-				value={this.props.characteristics}
-				onChange={this.onChange}
-				className="large-checkbox"
-			/>
-		);
+		return <Checkbox.Group options={CHARACTERISTICS} onChange={this.onChange} className="large-checkbox" />;
 	}
 }
 

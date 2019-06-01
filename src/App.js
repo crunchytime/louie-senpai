@@ -9,6 +9,7 @@ import Free from './components/free/Free';
 
 import 'antd/dist/antd.css';
 import './styles/App.scss';
+import Preview from 'components/Preview';
 
 function App() {
 	return (
@@ -23,11 +24,14 @@ function App() {
 
 			<div className="app-container">
 				<Row>
-					<Col sm={24} md={24} lg={24}>
+					<Col sm={24} md={24} lg={12}>
 						<Intro />
 						<Aca />
 						<Extra />
 						<Free />
+					</Col>
+					<Col sm={24} md={24} lg={12}>
+						<Preview />
 					</Col>
 				</Row>
 
