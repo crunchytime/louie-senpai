@@ -6,7 +6,6 @@ import ACTION_TYPE from 'reducers/actionType';
 import asFormField from 'components/hoc/FormField';
 class Character extends Component {
 	onChange = (e) => {
-		console.log('checbox: ', e);
 		this.props.dispatch({
 			type: ACTION_TYPE.characteristics,
 			data: { characteristics: e }

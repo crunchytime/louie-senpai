@@ -29,16 +29,22 @@ body {
 		margin: 10px 19px;
 	}
 }
+
+.custom-col {
+	padding: 0px 40px;
+	@media #{$small-max} {
+		padding: 0px;
+	}
+}
 .section-container {
 	margin: 10px;
-	padding: 40px 10px;
 	border-radius: 2px;
 	max-width: 800px;
 }
 
 .subsection-container {
 	margin: 0px 0px 20px 0px;
-	padding: 20px;
+	padding: 20px 0px;
 	background: white;
 	border-radius: 4px;
 }
@@ -90,6 +96,7 @@ body {
 
 .preview {
 	font-size: 16px;
+	margin-bottom: 20px;
 }
 
 .free-form-feedback-input {

@@ -11,8 +11,8 @@ class Preview extends Component {
 	};
 
 	handleClickButton = (event) => {
-		console.log(this.previewTextRef);
-		console.log(this.previewTextRef.innerHtml);
+		// console.log(this.previewTextRef);
+		// console.log(this.previewTextRef.innerHtml);
 	};
 
 	makeText = () => {
@@ -23,7 +23,7 @@ class Preview extends Component {
 			.map((key) => `${this.capitalise(this.printSimpleGender())} ${topics[key]} ${key}. `)
 			.join(
 				''
-			)} ${this.printName()} could improve with ${this.printImprovements()}.${this.printFreeFormFeedback()}`;
+			)} ${this.printName()} could improve with ${this.printImprovements()}.${this.printFreeFormFeedback()} `;
 	};
 
 	printName = () => {
@@ -134,16 +134,9 @@ class Preview extends Component {
 	render() {
 		const { topics } = this.props;
 		return (
-			<Affix offsetTop={300}>
+			<Affix offsetTop={0}>
 				<h1 className="title">Report Preview</h1>
-				<Card
-					className="preview"
-					ref={(element) => {
-						this.previewTextRef = element;
-					}}
-				>
-					{this.makeText()}
-				</Card>
+				<Card className="preview">{this.makeText()}</Card>
 				<CopyToClipboard text={this.makeText()} onCopy={() => this.setState({ copied: true })}>
 					<Button type="primary" onClick={this.handleClickButton} size="large">
 						Copy to clipboard

@@ -23,13 +23,13 @@ function App() {
 
 			<div className="app-container">
 				<Row>
-					<Col sm={24} md={24} lg={12}>
+					<Col sm={24} md={24} lg={12} className="custom-col">
 						<Intro />
 						<Aca />
 						<Extra />
 						<Free />
 					</Col>
-					<Col sm={24} md={24} lg={12}>
+					<Col sm={24} md={24} lg={12} className="custom-col">
 						<Preview />
 					</Col>
 				</Row>

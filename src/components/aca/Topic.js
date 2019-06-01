@@ -29,7 +29,6 @@ class Topic extends Component {
 	};
 	render() {
 		const { topic, name } = this.props;
-		console.log('passed in topic: ', topic);
 		return (
 			<div>
 				<div className="display-card">{name ? name : "(Student's first name)"}</div>
