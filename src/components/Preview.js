@@ -17,7 +17,6 @@ class Preview extends Component {
 		if (!word) return false;
 		const vowels = [ 'a', 'e', 'i', 'o', 'u' ];
 		if (vowels.some((vowel) => vowel === word[0].toLowerCase())) {
-			console.log('word begins with vowel! ', word);
 			return true;
 		} else {
 			return false;
@@ -55,26 +54,30 @@ class Preview extends Component {
 	printQuality = () => {
 		const { quality } = this.props;
 		const genericQuality = QUALITY[quality];
-		this.formatGender(genericQuality);
-		return genericQuality;
+		return this.formatGender(genericQuality);
 	};
 
 	formatGender = (source) => {
 		if (!source) return source;
+		const { gender } = this.props;
 		const regex = /\|\w+\,\w+\|/gi;
 		let matches;
+		let newString = source;
 		do {
 			matches = regex.exec(source);
 			if (matches) {
 				const match = matches[0];
-				console.log('match: ', match);
+				const strippedMatch = matches[0].replace(/\|/g, '');
+				const options = strippedMatch.split(',');
+				if (gender === 'boy') {
+					newString = newString.replace(match, options[0]);
+				} else {
+					newString = newString.replace(match, options[1]);
+				}
 			}
 		} while (matches);
 
-		// const matches = regex.exec(source);
-		// if (!matches) return source;
-		// console.log('here are matches: ', matches);
-		return source;
+		return newString;
 	};
 
 	render() {
