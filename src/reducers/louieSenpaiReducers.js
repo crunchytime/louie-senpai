@@ -27,7 +27,7 @@ export const genderReducer = (state = { gender: 'boy' }, action) => {
 	}
 };
 
-export const qualityReducer = (state = { quality: 4.5 }, action) => {
+export const qualityReducer = (state = { quality: 6 }, action) => {
 	switch (action.type) {
 		case ACTION_TYPE.quality:
 			return Object.assign({}, state, action.data);

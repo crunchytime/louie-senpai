@@ -53,6 +53,7 @@ class Preview extends Component {
 
 	printQuality = () => {
 		const { quality } = this.props;
+
 		const genericQuality = QUALITY[quality];
 		return this.formatGender(genericQuality);
 	};
@@ -80,6 +81,21 @@ class Preview extends Component {
 		return newString;
 	};
 
+	printGender = () => {
+		const { gender } = this.props;
+		if (gender === 'boy') {
+			return 'he';
+		} else {
+			return 'she';
+		}
+	};
+
+	capitalise = (someString) => {
+		if (!someString || someString.length === 0) return null;
+		if (someString.length === 1) return someString[0].toUpperCase();
+		return someString[0].toUpperCase() + someString.slice(1, someString.length).toLowerCase();
+	};
+
 	render() {
 		const { name, gender } = this.props;
 		return (
@@ -87,10 +103,10 @@ class Preview extends Component {
 				<h1 className="title">Report Preview</h1>
 				<Card className="preview">
 					{this.printName()} is {this.printCharacteristics()} student who {this.printQuality()}.<br />
-					{gender} (options: Ranked 1-5 feedback on topic 1) (Dropbox for topic 1) and (options :ranked 1-5
-					feedback on topic 2) (drop box for topic two). 3. {name} could improve with (tick box options:
-					respect) (tickbox option: classwork) (tickbox option homework). 4. {gender}[inset text: concluding
-					statement]
+					{this.capitalise(this.printGender())} (options: Ranked 1-5 feedback on topic 1) (Dropbox for topic
+					1) and (options :ranked 1-5 feedback on topic 2) (drop box for topic two). 3. {name} could improve
+					with (tick box options: respect) (tickbox option: classwork) (tickbox option homework). 4. {gender}[inset
+					text: concluding statement]
 				</Card>
 			</Affix>
 		);
